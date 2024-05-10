@@ -1,0 +1,28 @@
+﻿@model Währungsrechner.Models.ConvertierungsCentrum
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Währungsrechner!</title>
+    
+</head>
+
+<body>
+    <h1>Währungsrechner v.001beta</h1>
+    <h2>Geben Sie die Summe an!</h2>
+   
+    <div class="Euro">
+        <form asp-action="Index" method="post">
+            <label asp-for="Summe">Beitrag:</label>
+            <input asp-for="Summe" />
+            <button type="submit">OK</button>
+        </form>
+    </div>
+</body>
+</html>

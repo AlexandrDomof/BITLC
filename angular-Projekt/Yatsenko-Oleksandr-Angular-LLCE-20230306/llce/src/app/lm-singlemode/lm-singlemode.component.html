@@ -1,0 +1,92 @@
+<nav class="bg-gray-800">
+    <div class="flex items-center">
+        <img src="../../assets/AbraXasa.png" alt="Logo" class="h-8 mr-2 ml-4">
+        <h1 class="text-white text-lg text-right font-bold">AbraXasa LLCE-WebApp</h1>
+    </div>
+    <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium ml-4" aria-current="page"
+        routerLink="/lm-seite">LernModus</a>
+</nav>
+
+
+<main>
+
+    <div class="mx-10 my-5">
+
+        <h1 class="text-center font-bold">LernModus (SingleMode)</h1>
+        <br>
+
+        <div class="inline-flex justify-between space-x-4">
+            <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                (click)="onPreviosClick()">
+                Previos
+            </button>
+
+            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                (click)="onNextClick()">
+                Next
+            </button>
+
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                (click)="onDetailClick()">
+                Detail
+            </button>
+        </div>
+
+
+        <br>
+        <h3 class="font-bold ">Frage {{getScFrageElement(scfragen,indx).qid}}</h3>
+        <h2>{{getScFrageElement(scfragen,indx).qtxt}}</h2>
+
+
+        <label class="inline-flex items-center">
+            <input type="checkbox" [(ngModel)]="isChecked" (change)="isFi()"
+                class="form-checkbox h-5 w-5 text-gray-600">
+            <span class="ml-2 text-green-700 font-bold">Show the correct answer</span>
+        </label>
+
+
+        <div *ngIf="isChecked">
+
+            <div *ngIf="!isfi">
+                <div *ngFor="let qanswer of getScFrageElement(scfragen,indx).qanswers">
+                    <div *ngIf="qanswer.correct">
+                        <p class="ml-2 font-medium text-black-900" font-bold>{{qanswer.txt}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="isfi">
+                <div *ngFor="let qanswer of getScFrageElement(scfragen,indx).qanswers">
+                    <p class="ml-2 font-medium text-black-900" font-bold>{{qanswer.txt}}</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div *ngIf="detailFlag">
+            <h1 class="text-center font-bold text-rot-700">Detail answer</h1>
+            <ul *ngFor="let qanswer of getScFrageElement(scfragen,indx).qanswers">
+
+                <div *ngIf="!isfi">
+                    <div *ngIf="qanswer.correct">
+                        <p class="ml-2 font-bold text-green-700">{{qanswer.txt}}</p>
+                    </div>
+
+                    <div *ngIf="!qanswer.correct">
+                        <p class="ml-2 font-bold text-red-700">{{qanswer.txt}}</p>
+                    </div>
+                </div>
+
+                <div *ngIf="isfi">
+                    <p class="ml-2 font-bold text-green-700">{{qanswer.txt}}</p>
+                </div>
+
+            </ul>
+        </div>
+
+
+    </div>
+
+
+</main>

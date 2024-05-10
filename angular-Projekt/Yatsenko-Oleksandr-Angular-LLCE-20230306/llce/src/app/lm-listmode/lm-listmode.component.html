@@ -1,0 +1,72 @@
+<nav class="bg-gray-800">
+    <div class="flex items-center">
+        <img src="../../assets/AbraXasa.png" alt="Logo" class="h-8 mr-2 ml-4">
+        <h1 class="text-white text-lg text-right font-bold">AbraXasa LLCE-WebApp</h1>
+    </div>
+    <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium ml-4" aria-current="page"
+        routerLink="/lm-seite">LernModus</a>
+
+</nav>
+
+
+
+<main>
+    <div class="mx-10 my-5">
+
+        <h1 class="text-center font-bold">LernModus (ListMode)</h1>
+
+        <div>
+            <ul>
+                <li *ngFor="let scfrage of scfragen; let i = index">
+                    <div>
+                        <h3 class="font-bold">Frage {{scfrage.qid}}</h3>
+                        <h2>{{scfrage.qtxt}}</h2>
+
+
+                        <div class="inline-flex justify-between space-x-4">
+                            <button type="button"
+                                class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded "
+                                (click)="switchAnswer(scfrage.qid)">
+                                Answer
+                            </button>
+                        </div>
+
+                        <div *ngIf="nrAnswerShow!==scfrage.qid">
+
+                <li *ngFor="let qanswer of scfrage.qanswers">
+
+                    <p class="ml-2 font-medium text-black-900">{{qanswer.txt}}</p>
+
+                </li>
+                    </div>
+
+
+                     <div *ngIf="nrAnswerShow===scfrage.qid">
+                        <li *ngFor="let qanswer of scfrage.qanswers">
+
+                            <div *ngIf="scfrage.qtyp==='fi'">
+                                <p class="ml-2 font-medium text-green-700 font-bold">{{qanswer.txt}}</p>
+                              </div>
+
+                                <div *ngIf="scfrage.qtyp!=='fi'">
+                                 <div *ngIf="qanswer.correct">
+                                    <p class="ml-2 font-medium text-green-700 font-bold">{{qanswer.txt}}</p>
+                                 </div>
+
+                                  <div *ngIf="!qanswer.correct">
+                                    <p class="ml-2 font-medium text-red-700 font-bold">{{qanswer.txt}}</p>
+                                </div>
+                            </div>
+                        </li>
+                      </div>
+
+                     <br>
+                     </div>
+                </li>
+            </ul>
+
+         </div>
+
+    </div>
+
+</main>

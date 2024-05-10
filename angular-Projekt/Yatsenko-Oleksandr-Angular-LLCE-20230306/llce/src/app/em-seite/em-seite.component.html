@@ -1,0 +1,46 @@
+<nav  class="bg-gray-800">
+  <div class="flex items-center">
+    <img src="../../assets/AbraXasa.png" alt="Logo" class="h-8 ml-4 mr-2">
+    <h1 class="text-white text-lg text-right font-bold">AbraXasa LLCE-WebApp</h1>
+  </div>
+    <a href="#" class="bg-gray-900 text-white rounded-md px-3 ml-4 py-2 text-sm font-medium" aria-current="page" routerLink="/home">Home</a>
+</nav>
+
+<div class="mx-10 my-5">
+
+<h1 class="text-center font-bold">ExamModus (Manual)</h1>
+
+<div>
+    <h2 text-blue> Es ist an der Zeit, Ihr Wissen zu testen! Wählen Sie einfach die Anzahl der Fragen aus, die Sie beantworten möchten, und klicken Sie auf "Start". Viel Erfolg!</h2>
+</div>
+<br>
+
+<h2 class="text-center font-bold">Make your choice</h2>
+
+<div class="flex flex-col space-y-2">
+
+    <label class="inline-flex items-center">
+      <input type="radio" class="form-radio" name="radio-group" value="20" [(ngModel)]="selectedAntwort">
+      <span class="ml-2">20 Questions (Junior)</span>
+    </label>
+
+    <label class="inline-flex items-center">
+      <input type="radio" class="form-radio" name="radio-group" value="40" [(ngModel)]="selectedAntwort">
+      <span class="ml-2">40 Questions (Middle)</span>
+    </label>
+
+    <label class="inline-flex items-center">
+      <input type="radio" class="form-radio" name="radio-group" value="60" [(ngModel)]="selectedAntwort">
+      <span class="ml-2">60 Questions (Senior)</span>
+    </label>
+
+    <br>
+</div>
+
+<div>
+    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="zuExamSinglechoice()"  >
+        Start
+    </button>
+</div>
+</div>
+

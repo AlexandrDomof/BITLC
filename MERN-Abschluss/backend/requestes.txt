@@ -1,0 +1,85 @@
+Auslastung: (Suche Letzte)
+
+http://localhost:3004/auslastungs?fz_nr=3137
+http://localhost:3004/auslastungs?fz_nr=3135
+
+AFZ: (Aggregation)
+
+Fz_Nr+Station
+http://localhost:3004/zugs?fz_nr=3135&station=bcd
+
+
+Fz_Nr+Station+Zeitraum
+
+
+http://localhost:3004/zugs?fzNr=26408&dateFrom=2023-03-27&timeFrom=06:00&dateTo=2023-03-28&timeTo=08:50
+
+
+// Linie
+http://localhost:3004/linie?fzNr=26408&date=2023-03-27
+
+//Station
+http://localhost:3004/station?station=Aachen Hbf&dateFrom=2023-03-27&timeFrom=06:00&dateTo=2023-03-28&timeTo=08:50
+
+
+
+
+{
+        "fz_nr": "RE4",
+        "time": "",
+        "date":"2023-03-28",
+  	    "door_in":{
+    	"1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2,
+        "7": 2,
+        "8": 2,
+        "9": 2
+  			},
+        "door_out":{
+    		"1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2,
+        "7": 2,
+        "8": 2,
+        "9": 2
+  			},
+        "station" : "bcd"
+}
+
+RE-4 26408        26410(8:10) 26412(9:10)
+Dortmund Hbf 7:10
+Witten Hbf 7:20
+Wetter(Ruhr) 7:25
+Hagen Hbf 7:32
+Ennepetal 7:41
+Schwelm 7:46
+Wuppertal-Oberbarmen 7:50
+Wuppertal-Barmen 7:53
+Wuppertal Hbf 7:56
+Wuppertal Vohwinkel 8:04
+Düsseldorf Hbf 08:18
+Düsseldorf Blik 08:24
+Neuss Hbf 08:33
+Mönchengladbach Hbf 8:48
+Rheydt Hbf 8:54
+Erkelenz 9:01
+Baal 9:05
+Lindern 9:09
+Geilenkirchen 9:14
+Übach-Palenberg 9:18
+Herzogenrath 9:22
+Aachen West 9:30
+Aachen Schanz 9:39
+Aachen Hbf 9:43
+
+
+
+
+

@@ -1,0 +1,26 @@
+﻿@model Währungsrechner.Models.ConvertierungsCentrum
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="widtth=device-width" />
+    <title>BerechnungsForm</title>
+</head>
+<body>
+    Convertierung<br />
+  
+    <img src="../Img/Kuh.png" width:300px /> <br/>
+    @Model.TieresWährung[1, 0]<br />
+    <img src="../Img/schaf.png"width:300px /><br />
+    @Model.TieresWährung[1, 1]<br />
+    <img src="../Img/Ziege.png"width:300px /><br />
+    @Model.TieresWährung[1, 2]<br />
+    <img src="../Img/Ziegchen.jpg" width:300px/><br />
+    @Model.TieresWährung[1, 3]<br />
+
+
+</body>
+</html>

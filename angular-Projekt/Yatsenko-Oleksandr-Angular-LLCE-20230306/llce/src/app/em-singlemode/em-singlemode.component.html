@@ -1,0 +1,91 @@
+<nav class="bg-gray-800">
+  <div class="flex items-center">
+    <img src="../../assets/AbraXasa.png" alt="Logo" class="h-8 ml-4 mr-2">
+    <h1 class="text-white text-lg text-right font-bold">AbraXasa LLCE-WebApp</h1>
+  </div>
+</nav>
+
+<div class="mx-10 my-5">
+  <h1 class="text-center font-bold">ExamModus (Exam)</h1>
+  <h3 class="font-bold text-right text-red-700">Progress {{indx}}/{{anzFragen}}</h3>
+  <!-- //{{fehler}} -->
+
+  <h3 class="font-bold text-center">Frage {{indx+1}} ({{scfragen[fragenNummerArr[indx]].qid}})</h3>
+  <h2>{{scfragen[fragenNummerArr[indx]].qtxt}}</h2>
+
+  <br>
+  <div class="flex flex-col space-y-2">
+
+    <!-- SCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSCSC -->
+    <div *ngIf="scfragen[fragenNummerArr[indx]].qtyp==='sc'">
+
+      <label class="inline-flex items-center">
+        <input type="radio" class="form-radio" name="radio-group" value="A" [(ngModel)]="selectedAntwort">
+        <span class="ml-2">{{scfragen[fragenNummerArr[indx]].qanswers[0].txt}}</span>
+      </label>
+      <br>
+
+      <label class="inline-flex items-center">
+        <input type="radio" class="form-radio" name="radio-group" value="B" [(ngModel)]="selectedAntwort">
+        <span class="ml-2">{{scfragen[fragenNummerArr[indx]].qanswers[1].txt}}</span>
+      </label>
+      <br>
+
+      <label class="inline-flex items-center">
+        <input type="radio" class="form-radio" name="radio-group" value="C" [(ngModel)]="selectedAntwort">
+        <span class="ml-2">{{scfragen[fragenNummerArr[indx]].qanswers[2].txt}}</span>
+      </label>
+      <br>
+
+      <label class="inline-flex items-center">
+        <input type="radio" class="form-radio" name="radio-group" value="D" [(ngModel)]="selectedAntwort">
+        <span class="ml-2">{{scfragen[fragenNummerArr[indx]].qanswers[3].txt}}</span>
+      </label>
+      <br>
+
+      <label class="inline-flex items-center">
+        <input type="radio" class="form-radio" name="radio-group" value="E" [(ngModel)]="selectedAntwort">
+        <span class="ml-2">{{scfragen[fragenNummerArr[indx]].qanswers[4].txt}}</span>
+      </label>
+      <br>
+
+
+    </div>
+
+    <!-- MCMCMCMCMCMCMCMCMCMCMC -->
+
+    <div *ngIf="scfragen[fragenNummerArr[indx]].qtyp==='mc'">
+
+      <div *ngFor="let item of items; let i=index">
+        <label class="inline-flex items-center mt-3">
+          <input type="checkbox" [(ngModel)]="item.selected" class="form-checkbox h-5 w-5 text-indigo-600">
+          <span class="ml-2 text-gray-700">{{scfragen[fragenNummerArr[indx]].qanswers[i].txt}}</span>
+        </label>
+      </div>
+
+    </div>
+
+    <!-- FIFIFIFIFIFIFIFIFIFI -->
+
+    <div *ngIf="scfragen[fragenNummerArr[indx]].qtyp==='fi'">
+      <div class="mt-4">
+        <label for="inputField" class="lock text-green-700 font-bold">Answer eingabe:</label>
+        <input id="inputField" type="text"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          [(ngModel)]="selectedAntwort">
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <br>
+  <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+    (click)="onAntwortPruefen(scfragen[fragenNummerArr[indx]])">
+    Nächste
+  </button>
+  <!-- <p>{{scfragen[fragenNummerArr[indx]].qcorrect}}</p> -->
+
+</div>

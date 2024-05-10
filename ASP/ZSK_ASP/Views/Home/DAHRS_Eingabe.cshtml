@@ -1,0 +1,25 @@
+﻿@model ZSK_ASP.Models.Waehrung
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Betrag in DAHRS</title>
+</head>
+<body>
+    <h1>Beitrag in DAHRS</h1>
+
+    <form asp-action="Berechnung" methode="post">
+        <div>
+            <label asp-for="Eurobetrag">Euro</label>
+            <input asp-for="Eurobetrag" />
+        </div>
+        <button type="submit">OK</button>
+    </form>
+
+</body>
+</html>

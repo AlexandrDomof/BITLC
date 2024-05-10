@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\OlYa\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\OlYa\\.nuget\\packages"
+    ]
+  }
+}

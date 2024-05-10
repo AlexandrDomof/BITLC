@@ -1,0 +1,25 @@
+<nav  class="bg-gray-800">
+  <div class="flex items-center">
+    <img src="../../assets/AbraXasa.png" alt="Logo" class="h-8 ml-4 mr-2">
+    <h1 class="text-white text-lg text-right font-bold">AbraXasa LLCE-WebApp</h1>
+  </div>
+  <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 ml-4 text-sm font-medium" aria-current="page" routerLink="/home">Home</a>
+</nav>
+
+<div class="mx-10 my-5">
+
+<h1 class="text-center font-bold">ExamModus (Exam)</h1>
+<br>
+<h2 class="text-left font-bold">
+    <ul>
+        <li>Anzahl der Fragen            : {{anzFragen}}</li>
+        <li>Anzahl richtiger Antworten   : {{anzFragen-fehler}}</li>
+        <li>Anzahl der Fehler            : {{fehler}}</li>
+        <li>Ergebniss in %               : {{(anzFragen-fehler)/anzFragen*100}} %</li>
+        <li>Ergebniss                    : Super! Du hast bestanden!</li>
+
+    </ul>
+
+</h2>
+</div>
+
